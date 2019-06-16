@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import SearchArtist from './component/searchArtist'
+import AllCombine from './container/AllCombine/allCombine'
 import logo from './logo.svg';
 import './App.css';
 
@@ -10,7 +10,7 @@ render(){
   return (
     <div className="App">
       <a href="http://localhost:8888"><button>Login to Spotify</button></a>
-      <SearchArtist />
+      <AllCombine />
     </div>
   )};
 }
