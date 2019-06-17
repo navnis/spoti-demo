@@ -1,0 +1,5 @@
+export const SET_ACCESS_KEY =  "SET_ACCESS_KEYS"
+export const GET_ARTIST_LIST = "GET_ARTIST_LIST"
+export const GET_ALBUM_LIST = "GET_ALBUM_LIST"
+export const GET_TRACK_LIST = "GET_TRACK_LIST"
+export const GET_SINGLE_TRACK ="GET_SINGLE_TRACK"
