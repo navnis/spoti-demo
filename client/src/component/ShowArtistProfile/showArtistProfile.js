@@ -5,8 +5,8 @@ class ShowArtistProfile extends Component {
 
 render(){
   return (
-    <div className="App">
-     ShowArtistProfile
+    <div className="artistProfile">
+      ShowArtistProfile
     </div>
   )};
 }

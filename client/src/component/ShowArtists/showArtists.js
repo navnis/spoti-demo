@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import getAlbums from '../../store/actions/getAlbumAction';
-
+import '../ShowArtists/showArtists.css'
 
 let artista=[]
 class ShowArtists extends Component {
@@ -29,10 +29,12 @@ static getDerivedStateFromProps(props, State) {
 
 render(){
   return (
-    <div className="App">
+    <div className="artists">
      <h1>ShowArtists</h1>
+     <div className="artistNamesContainer">
+      {this.state.artists}
+     </div>
      
-     {this.state.artists}
     </div>
   )};
 }

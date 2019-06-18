@@ -25,7 +25,7 @@ class ShowTracks extends Component {
 
 render(){
   return (
-    <div className="App">
+    <div className="tracks">
      <h1 >Show tracks</h1>
      {this.state.tracks}
     </div>

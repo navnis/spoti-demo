@@ -18,8 +18,8 @@ render(){
 
   return (
 
-    <div className="App">
-     <button>player</button>
+    <div className="player">
+     <h1>Player</h1>
      <SpotifyPlayer
               uri="spotify:track:16YdPF3ZGFIfouwajAhv6C"
               size={size}

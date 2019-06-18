@@ -26,7 +26,7 @@ static getDerivedStateFromProps( props, State) {
 
 render(){
   return (
-    <div className="App">
+    <div className="albums">
      <h1>ShowAlbums</h1>
      { this.state.albums }
     </div>
