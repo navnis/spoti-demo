@@ -12,6 +12,7 @@ render(){
   return (
     <div className="allCombine">
      <Search/>
+     <Artists/>
      <Albums />
      <ShowAlbumSongs/>
     </div>
