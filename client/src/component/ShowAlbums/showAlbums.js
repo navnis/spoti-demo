@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
-import getAlbums from '../../store/actions/getAlbumAction';
+import getTracks from '../../store/actions/getAlbumTracksAction';
 
 let albumsa = []
 class ShowAlbums extends Component {
@@ -9,22 +9,26 @@ class ShowAlbums extends Component {
     super(props)
     this.state = {
       albums:[]
-    }
+    } 
+  }
     
-    }
-    
-    static getDerivedStateFromProps(props, State) {
-      console.log( props)
-      albumsa = props.artist.albumList.map(album =>(<div>{album.albumName}</div>))
-      return {albums : albumsa }
-     
-    }
+static getDerivedStateFromProps( props, State) {
+  albumsa = props.artist.albumList.map( album =>(
+    <div>
+      <img src={album.albumImage} alt="Album Image"/>
+      <div key={album.albumId} onClick={()=>props.getTracks(album.albumId)}> { album.albumName } </div> 
+    </div>
+   
+  ))
+  return {albums : albumsa }
+  
+}
 
 render(){
   return (
     <div className="App">
-     <button onClick={ () => this.props.getAlbums( "1uNFoZAHBGtllmzznpCI3s" ) }>ShowAlbums</button>
-     {this.state.albums}
+     <h1>ShowAlbums</h1>
+     { this.state.albums }
     </div>
   )};
 }
@@ -36,7 +40,7 @@ const mapStateToProps = ({ artist }) =>{
 }
 
 const mapDispatchToProps = dispatch =>{
-  return bindActionCreators({getAlbums}, dispatch) 
+  return bindActionCreators({ getTracks }, dispatch) 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ShowAlbums);
+export default connect( mapStateToProps, mapDispatchToProps )( ShowAlbums );

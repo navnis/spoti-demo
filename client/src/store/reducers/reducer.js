@@ -11,7 +11,6 @@ const initialState = {
 
 const reducer = (state = initialState , action) =>{
     switch(action.type){
-
         case actionType.SET_ACCESS_KEY: //to set access key to spotify api
             return{
                 ...state,
@@ -19,6 +18,7 @@ const reducer = (state = initialState , action) =>{
                } 
                
         case actionType.GET_ARTIST_LIST: //to get get top artist names on search
+           if(action.payload){
             const finalArtists=[]
             const filterArtists = action.payload.artists // declared extra variable to escape ....
             const filterArtists2 = filterArtists.items   //..... from three step Json data retrieving //
@@ -38,9 +38,13 @@ const reducer = (state = initialState , action) =>{
                 ...state,
                 artistList : finalArtists
             }
+           }
+
+           return {...state}
 
         //Retrieving albums according to a single choosen artist
         case actionType.GET_ALBUM_LIST:
+           if(action.payload){
             const filterAlbums = action.payload.items
             const finalAlbums = [] 
 
@@ -60,9 +64,15 @@ const reducer = (state = initialState , action) =>{
                 ...state,
                 albumList : finalAlbums
                } 
+           }
+
+            return{...state}
+           
 
         //Retrieving tracks according to a single choosen album      
         case actionType.GET_TRACK_LIST:
+
+               if(action.payload){
                 const filterTracks = action.payload.items
                 const finalTracks = [] 
 
@@ -76,10 +86,15 @@ const reducer = (state = initialState , action) =>{
                     finalTracks.push(tracks)
                 }
 
-            return{
-                ...state,
-                trackList : finalTracks
-            }
+                return{
+                    ...state,
+                    trackList : finalTracks
+                }
+               }
+
+               return {...state}
+
+           
 
 
         case actionType.GET_SINGLE_TRACK:

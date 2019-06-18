@@ -7,16 +7,22 @@ import getAlbums from '../../store/actions/getAlbumAction';
 let artista=[]
 class ShowArtists extends Component {
 constructor(props){
-super(props)
-this.state = {
-  artists:[]
-}
+  super(props)
+  this.state = {
+    artists:[]
+  }
 
 }
 
 static getDerivedStateFromProps(props, State) {
   console.log( props)
-  artista = props.artist.artistList.map(artist =>(<div onClick={()=>props.getAlbums(artist.artistId)}>{artist.artistName}</div>))
+  artista = props.artist.artistList.map(artist =>(
+    <div>
+      <img src={artist.artistImage} alt="Artist Image"/>
+      <div key={artist.artistId} onClick={()=>props.getAlbums(artist.artistId)}>{artist.artistName}</div>
+    </div>
+   
+  ))
   return {artists : artista }
  
 }
@@ -24,8 +30,8 @@ static getDerivedStateFromProps(props, State) {
 render(){
   return (
     <div className="App">
-     ShowArtists
-     {/* {() => this.props.artist.artistList.map((artistNames)=>{<div>{artistNames.artistName}</div>})} */}
+     <h1>ShowArtists</h1>
+     
      {this.state.artists}
     </div>
   )};

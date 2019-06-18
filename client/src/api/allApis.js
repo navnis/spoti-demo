@@ -2,30 +2,52 @@ import Spotify from 'spotify-web-api-js'
 const spotifyWebApi = new Spotify()
 
 //Spotify api to get artists on search
-export const getSearch = (artistName) => {
+export const getSearch = async(artistName) => {
   
- return spotifyWebApi.searchArtists(artistName, {limit: 10})
+   try {
+      return await spotifyWebApi.searchArtists(artistName, {limit: 10})
+   }
+   catch(err) {
+      alert("Access token expired. Please login again")
+      return null
+   } 
 
 }
 
 //Spotify api to get albums of choosen artist
-export const getArtistAlbum = (artistId) => {
-  
-   return spotifyWebApi.getArtistAlbums(artistId, {limit: 10})
+export const getArtistAlbum = async(artistId) => {
+  try{
+      return await spotifyWebApi.getArtistAlbums(artistId, {limit: 10})
+  }
+  catch(err) {
+      alert("Access token expired. Please login again")
+      return null
+ } 
    
 }
 
 //Spotify api to get all tracks of choosen album
-export const getAlbumTracks = (albumId) => {
-
-  return spotifyWebApi.getAlbumTracks(albumId, {limit: 10})
+export const getAlbumTracks = async(albumId) => {
+   try{
+      return await spotifyWebApi.getAlbumTracks(albumId, {limit: 10})
+   }
+   catch(err){
+      alert("Access token expired. Please login again")
+      return null
+   }
 
 }
 
 //Spotify api to get single track choosen in album
-export const getSingleTrack = (trackId) => {
+export const getSingleTrack = async(trackId) => {
    
-   return spotifyWebApi.getTrack(trackId)
+   try{
+      return await spotifyWebApi.getTrack(trackId)
+   }
+   catch(err){
+      alert("Access token expired. Please login again")
+      return null
+   }
    
 }
 
