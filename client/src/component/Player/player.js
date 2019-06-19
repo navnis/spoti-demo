@@ -32,6 +32,8 @@ render(){
               view={view}
               theme={theme}
         />
+
+
     </div>
   )};
 }
@@ -43,11 +45,11 @@ const mapStateToProps = ({ artist }) =>{
   } 
 }
 
-const mapDispatchToProps = dispatch =>{
-  return bindActionCreators({getAlbums}, dispatch) 
-}
+// const mapDispatchToProps = dispatch =>{
+//   return bindActionCreators({getAlbums}, dispatch) 
+// }
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(Footer);
+export default connect(mapStateToProps)(Footer);
 
 

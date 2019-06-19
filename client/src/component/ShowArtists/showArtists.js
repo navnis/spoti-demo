@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import getAlbums from '../../store/actions/getAlbumAction';
+import artistPic from '../../store/actions/getProfile'
 import '../ShowArtists/showArtists.css'
 
 let artista=[]
@@ -14,9 +15,12 @@ constructor(props){
 
 }
 
+
+
+
 static getDerivedStateFromProps(props, State) {
   artista = props.artist.artistList.map(artist =>(
-    <div className="singleArtist"  onClick={()=>props.getAlbums(artist.artistId, artist.artistFullImage)}>
+    <div className="singleArtist"  onClick={()=>{props.getAlbums(artist.artistId); props.artistPic(artist.artistFullImage)}}>
       <img src={artist.artistImage} alt="Artist Image"/>
       <div className="artistDetails">
         <p className="artistName" key={artist.artistId}>{artist.artistName}</p>
@@ -51,7 +55,7 @@ const mapStateToProps = ({ artist }) =>{
 }
 
 const mapDispatchToProps = dispatch =>{
-  return bindActionCreators({getAlbums}, dispatch) 
+  return bindActionCreators({getAlbums, artistPic}, dispatch) 
 }
 
 

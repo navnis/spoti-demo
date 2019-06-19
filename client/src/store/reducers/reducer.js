@@ -7,7 +7,9 @@ const initialState = {
     albumList:[],
     trackList:[],
     artistPic:"",
-    singleTrack:""
+    singleTrack:"",
+    albumArtistName :""
+   // tt:""
 }
 
 const reducer = (state = initialState , action) =>{
@@ -39,7 +41,7 @@ const reducer = (state = initialState , action) =>{
                 finalArtists.push(artist)
             }
            
-           // console.log(filterArtists)
+           //console.log("inside reducer artist",filterArtists)
             return{
                 ...state,
                 artistList : finalArtists
@@ -67,12 +69,12 @@ const reducer = (state = initialState , action) =>{
                 }                
                 finalAlbums.push(albums)
             }
-            console.log("inside album",action.payload )
+           // console.log("inside album",action.payload )
 
             return{
                 ...state,
                 albumList : finalAlbums,
-               // artistPic:action.artistPic
+                albumArtistName: filterAlbums[0].artists[0].name
                } 
            }
 
@@ -95,7 +97,7 @@ const reducer = (state = initialState , action) =>{
                     }                
                     finalTracks.push(tracks)
                 }
-                console.log("inside track",action.payload )
+                //console.log("inside track",action.payload )
                 return{
                     ...state,
                     trackList : finalTracks
@@ -104,12 +106,10 @@ const reducer = (state = initialState , action) =>{
 
               
 
-           
-
 
         case actionType.GET_SINGLE_TRACK:
 
-        console.log("inside track",action.payload)
+        //console.log("inside track",action.payload)
         if(action.payload){
             return{
                 ...state,
@@ -117,6 +117,17 @@ const reducer = (state = initialState , action) =>{
             }
         }
         return {...state}
+
+        case actionType.GET_ARTIST_PIC:
+
+                console.log("inside track",action.payload)
+                if(action.payload){
+                    return{
+                        ...state,
+                        artistPic : action.payload
+                    }
+                }
+                return {...state}
            
     }
    

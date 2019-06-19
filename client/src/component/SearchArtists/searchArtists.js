@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import 'antd/dist/antd.css';
-//import './seacrchArtist.css';
 import { Input } from 'antd';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
