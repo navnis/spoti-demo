@@ -17,4 +17,5 @@
 .tracks .trackWrapper p{
     margin-bottom : 5px;
     text-align: left; 
+    font-weight: bold;
 }

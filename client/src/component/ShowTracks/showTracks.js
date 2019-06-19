@@ -28,7 +28,7 @@ render(){
   return (
     <div className="tracks">
       <div className="trackWrapper">
-        <p>Album Name</p>
+        <p>{this.props.artist.albumName ? this.props.artist.albumName.name+"("+this.props.artist.albumName.noOfTrack +")" : "Select Album" }</p>
         {this.state.tracks}
       </div>
     </div>

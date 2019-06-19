@@ -8,7 +8,8 @@ const initialState = {
     trackList:[],
     artistPic:"",
     singleTrack:"",
-    albumArtistName :""
+    albumArtistName :"",
+    albumName:""
    // tt:""
 }
 
@@ -97,7 +98,7 @@ const reducer = (state = initialState , action) =>{
                     }                
                     finalTracks.push(tracks)
                 }
-                //console.log("inside track",action.payload )
+               
                 return{
                     ...state,
                     trackList : finalTracks
@@ -106,10 +107,9 @@ const reducer = (state = initialState , action) =>{
 
               
 
-
+//getting data of single track 
         case actionType.GET_SINGLE_TRACK:
 
-        //console.log("inside track",action.payload)
         if(action.payload){
             return{
                 ...state,
@@ -118,13 +118,24 @@ const reducer = (state = initialState , action) =>{
         }
         return {...state}
 
+// to get pic on select of artist on top 
         case actionType.GET_ARTIST_PIC:
-
-                console.log("inside track",action.payload)
                 if(action.payload){
                     return{
                         ...state,
                         artistPic : action.payload
+                    }
+                }
+                return {...state}
+
+
+//to get album name separetely for tracks 
+         case actionType.GET_ALBUM_NAME:
+
+                if(action.payload){
+                    return{
+                        ...state,
+                        albumName : action.payload
                     }
                 }
                 return {...state}
