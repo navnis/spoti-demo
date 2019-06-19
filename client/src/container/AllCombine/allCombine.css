@@ -2,3 +2,24 @@
     height:60px;
     width: 60px;
 }
+
+.allCombine .middleContainer{
+    height: 73vh;
+}
+
+.allCombine .middleContainer .contArtist{
+    padding:0;
+    padding-right: 12px; 
+}
+
+.allCombine .middleContainer .contAlbumSong{
+    padding:0;
+}
+
+.allCombine .player{
+    margin-top: 15px; 
+}
+
+.allCombine .player .ai{
+    background-color: rgba(46, 0, 132, 1)
+}

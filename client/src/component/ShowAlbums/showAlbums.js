@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
 import getTracks from '../../store/actions/getAlbumTracksAction';
+import '../ShowAlbums/showAlbums.css'
 
 let albumsa = []
 class ShowAlbums extends Component {
@@ -14,9 +15,14 @@ class ShowAlbums extends Component {
     
 static getDerivedStateFromProps( props, State) {
   albumsa = props.artist.albumList.map( album =>(
-    <div>
-      <img src={album.albumImage} alt="Album Image"/>
-      <div key={album.albumId} onClick={()=>props.getTracks(album.albumId)}> { album.albumName } </div> 
+    <div className="singleAlbum"  onClick={()=>props.getTracks(album.albumId)}>
+     
+        <img src={album.albumImage} alt="Album Image"/>
+        <div className="albumDetails">
+          <p className="albumName" key={album.albumId}>Artist: { album.albumArtist } </p> 
+          <p>Album: {album.albumName}</p>
+          <p>Songs: {album.albumSongs}</p>
+        </div>
     </div>
    
   ))
@@ -27,8 +33,11 @@ static getDerivedStateFromProps( props, State) {
 render(){
   return (
     <div className="albums">
-     <h1>ShowAlbums</h1>
-     { this.state.albums }
+      <h5 className="headingAlbum">Albums</h5>
+     <div className="albumWrapper">
+        { this.state.albums }
+     </div>
+     
     </div>
   )};
 }

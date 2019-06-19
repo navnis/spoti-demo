@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import getSearch from '../../store/actions/searchArtistAction';
 import accessToken from '../../store/actions/accessTokenAction';
-
+import '../SearchArtists/searchArtists.css'
 
 const Search = Input.Search
 
@@ -18,7 +18,6 @@ class SearchArtist extends Component {
   }
 
 
-
   render(){
    
     return (
@@ -28,8 +27,12 @@ class SearchArtist extends Component {
             placeholder="Search Artists"
             onSearch={(value)=>this.props.getSearch(value)}
             onChange ={(e) => e.target.value !="" ? this.props.getSearch(e.target.value) : console.log("please enter") }
-            style={{ width: 200 }}
+            //style={{ width: 300 }}
           />
+          <div className="login">
+            <a href="http://localhost:8888"><button>Login to Spotify</button></a>
+          </div>
+         
 
         
       </div>

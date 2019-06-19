@@ -1,0 +1,21 @@
+.mainSearch{
+    display: flex;
+    margin-bottom : 4px; 
+}
+
+.mainSearch .login{
+    text-align: right;
+    width: 100%;
+}
+
+
+.mainSearch .ant-input-affix-wrapper{
+    width: 28%;
+}
+
+.mainSearch .login button{
+    color: white;
+    background-color: rgba(46, 0, 132, 1);
+    border-radius: 4px;
+    border:none;
+}

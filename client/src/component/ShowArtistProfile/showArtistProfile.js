@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import '../ShowArtistProfile/showArtistProfile.css'
 
 class ShowArtistProfile extends Component {
 

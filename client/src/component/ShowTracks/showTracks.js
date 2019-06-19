@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux'
-import getAllTracks from '../../store/actions/getAlbumTracksAction'
+import getSingleTrack from '../../store/actions/getSingleTrackAction'
+import '../ShowTracks/showTracks.css'
 
 
 let tracksa
@@ -16,8 +17,8 @@ class ShowTracks extends Component {
   }
 
 
-  static getDerivedStateFromProps( props, State) {
-    tracksa = props.artist.trackList.map( track =>(<div key={track.trackId}> { track.trackName } </div> ))
+  static getDerivedStateFromProps( props, state) {
+    tracksa = props.artist.trackList.map( track =>(<div onClick={()=>props.getSingleTrack(track.trackId)} className="singleTrack" key={track.trackId}> { track.trackName } </div> ))
     return {tracks : tracksa }
     
   }
@@ -26,8 +27,10 @@ class ShowTracks extends Component {
 render(){
   return (
     <div className="tracks">
-     <h1 >Show tracks</h1>
-     {this.state.tracks}
+      <div className="trackWrapper">
+        <p>Album Name</p>
+        {this.state.tracks}
+      </div>
     </div>
   )};
 }
@@ -39,7 +42,7 @@ const mapStateToProps = ({ artist }) =>{
 }
 
 const mapDispatchToProps = dispatch =>{
-  return bindActionCreators({getAllTracks}, dispatch) 
+  return bindActionCreators({getSingleTrack}, dispatch) 
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShowTracks);

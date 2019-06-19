@@ -11,21 +11,22 @@ class Combine extends Component {
 render(){
   return (
     <div className="allCombine">
-    <Container>
-    <a href="http://localhost:8888"><button>Login to Spotify</button></a>
+
      <Search/>
      
      <Row className="middleContainer">
-        <Col sm={3} md={3}>
+        <Col sm={3} md={3} className="contArtist">
           <Artists/>
         </Col>
-        <Col sm={9} md={9}>
+        <Col sm={9} md={9} className="contAlbumSong">
           <ShowAlbumSongs/>
         </Col>    
      </Row> 
     
-     <Player/>
-     </Container>
+    <footer>
+    <Player/>
+    </footer>
+    
     </div>
   )};
 }

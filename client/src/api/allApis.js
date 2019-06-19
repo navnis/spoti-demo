@@ -5,7 +5,7 @@ const spotifyWebApi = new Spotify()
 export const getSearch = async(artistName) => {
   
    try {
-      return await spotifyWebApi.searchArtists(artistName, {limit: 10})
+      return await spotifyWebApi.searchArtists(artistName, {limit: 5})
    }
    catch(err) {
       alert("Access token expired. Please login again")
@@ -17,7 +17,7 @@ export const getSearch = async(artistName) => {
 //Spotify api to get albums of choosen artist
 export const getArtistAlbum = async(artistId) => {
   try{
-      return await spotifyWebApi.getArtistAlbums(artistId, {limit: 10})
+      return await spotifyWebApi.getArtistAlbums(artistId, {limit: 8})
   }
   catch(err) {
       alert("Access token expired. Please login again")
@@ -29,7 +29,7 @@ export const getArtistAlbum = async(artistId) => {
 //Spotify api to get all tracks of choosen album
 export const getAlbumTracks = async(albumId) => {
    try{
-      return await spotifyWebApi.getAlbumTracks(albumId, {limit: 10})
+      return await spotifyWebApi.getAlbumTracks(albumId, {limit: 6})
    }
    catch(err){
       alert("Access token expired. Please login again")

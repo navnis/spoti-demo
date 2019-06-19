@@ -1,0 +1,20 @@
+.showAlbumSongs{
+    background-color : #dbd4ea; 
+    height : 73vh ;
+
+}
+
+.showAlbumSongs .tracks{
+   min-height: 89%;
+    margin-top: 26px;
+    margin-right: 10px;
+    background-color: white; 
+}
+
+
+/* @media screen and (max-width: 1165px){
+    .showAlbumSongs .allAlbums{
+        height: auto;
+        overflow: auto;
+    }
+} */

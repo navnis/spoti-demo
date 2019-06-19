@@ -15,11 +15,16 @@ constructor(props){
 }
 
 static getDerivedStateFromProps(props, State) {
-  console.log( props)
   artista = props.artist.artistList.map(artist =>(
-    <div>
+    <div className="singleArtist"  onClick={()=>props.getAlbums(artist.artistId, artist.artistFullImage)}>
       <img src={artist.artistImage} alt="Artist Image"/>
-      <div key={artist.artistId} onClick={()=>props.getAlbums(artist.artistId)}>{artist.artistName}</div>
+      <div className="artistDetails">
+        <p className="artistName" key={artist.artistId}>{artist.artistName}</p>
+        <h5 className="artistGenres">Genre: {artist.artistGenres ? artist.artistGenres : "no data"}</h5>
+        <h5 className="artistPopularity">Popularity: {artist.artistPopularity}%</h5>
+        <h5 className="artistFollowers">Followers : <span className="followerNo">{artist.artistFollowers}</span></h5>
+      </div>
+     
     </div>
    
   ))
@@ -30,8 +35,8 @@ static getDerivedStateFromProps(props, State) {
 render(){
   return (
     <div className="artists">
-     <h1>ShowArtists</h1>
-     <div className="artistNamesContainer">
+
+     <div className="artistContainer">
       {this.state.artists}
      </div>
      

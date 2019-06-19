@@ -1,0 +1,19 @@
+.tracks .singleTrack{
+    background-color: rgba(165, 116, 255, 1);
+    margin-top : 5px; 
+    color: white;
+    cursor: pointer;
+}
+
+.tracks .singleTrack:hover{
+    background-color:rgba(46, 0, 132, 1)
+}
+
+.tracks .trackWrapper{
+    padding: 5px;
+}
+
+.tracks .trackWrapper p{
+    margin-bottom : 5px;
+    text-align: left; 
+}
