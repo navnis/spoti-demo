@@ -26,17 +26,7 @@ export const getArtistAlbum = async(artistId) => {
    
 }
 
-//Spotify api to get all tracks of choosen album
-export const getAlbumTracks = async(albumId) => {
-   try{
-      return await spotifyWebApi.getAlbumTracks(albumId, {limit: 6})
-   }
-   catch(err){
-      alert("Access token expired. Please login again")
-      return null
-   }
 
-}
 
 //Spotify api to get single track choosen in album
 export const getSingleTrack = async(trackId) => {
@@ -51,6 +41,17 @@ export const getSingleTrack = async(trackId) => {
    
 }
 
+//Spotify api to get all tracks of choosen album
+export const getAlbumTracks = async(albumId) => {
+   try{
+      return await spotifyWebApi.getAlbumTracks(albumId, {limit: 6})
+   }
+   catch(err){
+      alert("Access token expired. Please login again")
+      return null
+   }
+
+}
 
 //Justin Beiber {artist Id}: "1uNFoZAHBGtllmzznpCI3s"
 //Beleive Acoustic {ALbum Id} : "4yz9rO7Q1UC2rK5eLOxmS7"
