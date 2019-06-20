@@ -75,7 +75,9 @@ const reducer = (state = initialState , action) =>{
             return{
                 ...state,
                 albumList : finalAlbums,
-                albumArtistName: filterAlbums[0].artists[0].name
+                albumArtistName: filterAlbums[0].artists[0].name,
+                trackList:[],
+                albumName:""
                } 
            }
 
