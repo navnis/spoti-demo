@@ -6,23 +6,18 @@ import getAlbums from '../../store/actions/getAlbumAction';
 
 class Footer extends Component {
 
-  // constructor(props){
-  //   super(props)
-    
-  
-  // }
-
+ 
 render(){
   //styles for player
   const size = {
     width: '100%',
-    height: 80,
+    height: 78,
   };
   const view = 'coverart'; // or ''list
   const theme = 'black'; // or 'white'
   //End of styles for player    
 
-  console.log(this.props)
+  
   return (
 
     <div className="player">
@@ -32,8 +27,6 @@ render(){
               view={view}
               theme={theme}
         />
-
-
     </div>
   )};
 }

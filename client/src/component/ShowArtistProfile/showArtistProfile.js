@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import '../ShowArtistProfile/showArtistProfile.css'
 import { connect } from 'react-redux';
-class ShowArtistProfile extends Component {
 
+class ShowArtistProfile extends Component {
 
 render(){
   const sortData =this.props.artist

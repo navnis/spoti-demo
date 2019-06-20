@@ -5,6 +5,8 @@
 
 .allCombine .middleContainer{
     height: 73vh;
+    margin-left: 0;
+    margin-right: 0;
 }
 
 .allCombine .middleContainer .contArtist{
@@ -17,7 +19,7 @@
 }
 
 .allCombine .player{
-    margin-top: 15px; 
+    margin-top: 12px; 
 }
 
 .allCombine .player .ai{

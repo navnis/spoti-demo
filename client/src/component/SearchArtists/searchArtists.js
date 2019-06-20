@@ -26,7 +26,7 @@ class SearchArtist extends Component {
             placeholder="Search Artists"
             onSearch={(value)=>this.props.getSearch(value)}
             onChange ={(e) => e.target.value !="" ? this.props.getSearch(e.target.value) : console.log("please enter") }
-            //style={{ width: 300 }}
+        
           />
           <div className="login">
             <a href="http://localhost:8888"><button>Login to Spotify</button></a>

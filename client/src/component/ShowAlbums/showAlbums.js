@@ -13,6 +13,8 @@ class ShowAlbums extends Component {
       albums:[]
     } 
   }
+
+
     
 static getDerivedStateFromProps( props, State) {
   albumsa = props.artist.albumList.map( album =>(

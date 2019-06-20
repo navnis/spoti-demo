@@ -16,8 +16,6 @@ constructor(props){
 }
 
 
-
-
 static getDerivedStateFromProps(props, State) {
   artista = props.artist.artistList.map(artist =>(
     <div className="singleArtist"  onClick={()=>{props.getAlbums(artist.artistId); props.artistPic(artist.artistFullImage)}}>
