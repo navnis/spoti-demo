@@ -2,6 +2,6 @@
 
 
 
-start server :  Spotify\auth-server\authorization_code> node app.js  
+start server :  spoti-demo\auth-server\authorization_code> node app.js  
 
-start app : Spotify\client npm start
+start app : spoti\client npm start
